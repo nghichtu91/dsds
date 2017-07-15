@@ -1,0 +1,119 @@
+<div class="wrapper">
+    <p class="tab-top">
+        <a href="javascript:;" (click)="showTab(1)" [ngClass]="{active: tabActive===1}">Enable ({{enableNumber}})</a>
+        <a href="javascript:;" (click)="showTab(2)" [ngClass]="{active: tabActive===2}">Disable ({{disableNumber}})</a>
+    </p>
+
+    <div class="content-page" *ngIf="tabActive===1">
+        <p class="title-table">{{enableNumber}} Access policies <i class="fa fa-plus btn-add" aria-hidden="true"></i></p>
+        <div class="clearfix"></div>
+        <table class="table table-fixed">
+            <thead>
+                <tr>
+                    <th class="col-set-0">Order</th>
+                    <th class="col-set-2">Group</th>
+                    <th class="col-set-07">Protocols and User Agents</th>
+                    <th class="col-set-1">URL Filtering</th>
+                    <th class="col-set-1">Applications</th>
+                    <th class="col-set-1">Objects</th>
+                    <th class="col-set-4">Anti-Malware and Peputation</th>
+                    <th class="col-set-02"></th>
+                </tr>
+            </thead>
+            <tbody dnd-sortable-container [sortableData]="enables">
+                <tr *ngFor="let item of enables; let i = index; let isOdd = odd" [class.odd]="isOdd"  dnd-sortable [sortableIndex]="i" class="row-item">
+                    <td class="col-set-0"><span dnd-sortable-handle class="btn-move"><i class="show-move fa fa-ellipsis-v" aria-hidden="true"></i></span> <span class="id-number">{{item.id}}</span></td>
+                    <td class="col-set-2">
+                        <p class="item-name">{{item.name + " " + item.id}}</p>
+                        <span>Description: {{item.description}}</span>
+                    </td>
+                    <td class="col-set-07">
+                        <span>{{item.protocols}}</span>
+                    </td>
+                    <td class="col-set-1">
+                        <span [hidden]="item.urlBlocked===''">{{item.urlBlocked}} Blocked</span><br>
+                        <span [hidden]="item.urlMonitoring===''">{{item.urlMonitoring}} Monitoring</span><br>
+                        <span *ngIf="item.urlGlobal">Global Policy</span>
+                    </td>
+                    <td class="col-set-1">
+                        <span [hidden]="item.appBlocked===''">{{item.appBlocked}} Blocked</span><br>
+                        <span [hidden]="item.appMonitoring===''">{{item.appMonitoring}} Monitoring</span><br>
+                        <span *ngIf="item.appGlobal">Global Policy</span>
+                    </td>
+                    <td class="col-set-1">
+                        <span [hidden]="item.ojBlocked===''">{{item.ojBlocked}} Blocked</span><br>
+                        <span [hidden]="item.ojMonitoring===''">{{item.ojMonitoring}} Monitored</span><br>
+                        <span *ngIf="item.ojGlobal">Global Policy</span>
+                    </td>
+                    <td class="col-set-4">
+                        <span class="opacity-set">Disable  Web Reputation</span>
+                        <p><span [ngClass]="{enable: item.enable}">Enable</span> Advanced Malware protection</p>
+                        <p><span [ngClass]="{enable: item.enable}">Enable</span> Anti-Malware Scanning</p>
+                    </td>
+                    <td class="col-set-02">
+                        <span class="show-move">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="content-page" *ngIf="tabActive===2">
+        <p class="title-table">{{disableNumber}} Access policies <i class="fa fa-plus btn-add" aria-hidden="true"></i></p>
+        <div class="clearfix"></div>
+        <table class="table table-fixed">
+            <thead>
+                <tr>
+                    <th class="col-set-0">Order</th>
+                    <th class="col-set-2">Group</th>
+                    <th class="col-set-07">Protocols and User Agents</th>
+                    <th class="col-set-1">URL Filtering</th>
+                    <th class="col-set-1">Applications</th>
+                    <th class="col-set-1">Objects</th>
+                    <th class="col-set-4">Anti-Malware and Peputation</th>
+                    <th class="col-set-02"></th>
+                </tr>
+            </thead>
+            <tbody dnd-sortable-container [sortableData]="disables">
+                <tr *ngFor="let item of disables; let i = index; let isOdd = odd" [class.odd]="isOdd"  dnd-sortable [sortableIndex]="i" class="row-item">
+                    <td class="col-set-0"><span dnd-sortable-handle class="btn-move"><i class="show-move fa fa-ellipsis-v" aria-hidden="true"></i></span> <span class="id-number">{{item.id}}</span></td>
+                    <td class="col-set-2">
+                        <p class="item-name">{{item.name + " " + item.id}}</p>
+                        <span>Description: {{item.description}}</span>
+                    </td>
+                    <td class="col-set-07">
+                        <span>{{item.protocols}}</span>
+                    </td>
+                    <td class="col-set-1">
+                        <span [hidden]="item.urlBlocked===''">{{item.urlBlocked}} Blocked</span><br>
+                        <span [hidden]="item.urlMonitoring===''">{{item.urlMonitoring}} Monitoring</span><br>
+                        <span *ngIf="item.urlGlobal">Global Policy</span>
+                    </td>
+                    <td class="col-set-1">
+                        <span [hidden]="item.appBlocked===''">{{item.appBlocked}} Blocked</span><br>
+                        <span [hidden]="item.appMonitoring===''">{{item.appMonitoring}} Monitoring</span><br>
+                        <span *ngIf="item.appGlobal">Global Policy</span>
+                    </td>
+                    <td class="col-set-1">
+                        <span [hidden]="item.ojBlocked===''">{{item.ojBlocked}} Blocked</span><br>
+                        <span [hidden]="item.ojMonitoring===''">{{item.ojMonitoring}} Monitored</span><br>
+                        <span *ngIf="item.ojGlobal">Global Policy</span>
+                    </td>
+                    <td class="col-set-4">
+                        <span>Disable  Web Reputation</span>
+                        <p class="opacity-set"><span [ngClass]="{enable: item.enable}">Enable</span> Advanced Malware protection</p>
+                        <p class="opacity-set"><span [ngClass]="{enable: item.enable}">Enable</span> Anti-Malware Scanning</p>
+                    </td>
+                    <td class="col-set-02">
+                        <span class="show-move">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

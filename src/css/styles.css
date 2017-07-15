@@ -1,0 +1,218 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+.tab-top > a, .tab-top > a:hover {
+  line-height: 40px;
+  font-size: 16px;
+  display: inline-block;
+  padding: 0 20px;
+  text-decoration: none; }
+
+body {
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif; }
+
+span.enable {
+  color: #4bb25c; }
+
+blockquote {
+  quotes: none; }
+  blockquote:before {
+    content: '';
+    content: none; }
+  blockquote:after {
+    content: '';
+    content: none; }
+
+q {
+  quotes: none; }
+  q:before {
+    content: '';
+    content: none; }
+  q:after {
+    content: '';
+    content: none; }
+
+ol {
+  list-style: none; }
+
+ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+article {
+  display: block; }
+
+aside {
+  display: block; }
+
+details {
+  display: block; }
+
+figure {
+  display: block; }
+
+figcaption {
+  display: block; }
+
+footer {
+  display: block; }
+
+header {
+  display: block; }
+
+hgroup {
+  display: block; }
+
+menu {
+  display: block; }
+
+nav {
+  display: block; }
+
+section {
+  display: block; }
+
+.wrapper {
+  width: 1165px;
+  margin: 0 auto; }
+
+.tab-top {
+  height: 70px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  padding: 30px 15px 0; }
+  .tab-top > a.active {
+    background-color: #fff; }
+
+.title-table {
+  padding: 30px 15px; }
+
+.btn-add {
+  font-weight: bold;
+  float: right;
+  color: #666;
+  line-height: 15px;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  font-size: 20px; }
+
+.col-name {
+  width: 130px; }
+
+.table-fixed {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ddd;
+  position: relative; }
+  .table-fixed td {
+    font-size: 14px;
+    display: block; }
+  .table-fixed tbody {
+    height: 400px;
+    overflow-y: auto;
+    width: 100%;
+    background-color: #fff;
+    display: block; }
+    .table-fixed tbody tr td:first-child {
+      border-left: none;
+      border-top: none;
+      border-bottom: none;
+      background-color: #fff; }
+    .table-fixed tbody tr td:last-child {
+      border-left: none; }
+    .table-fixed tbody tr.row-item:hover td {
+      background-color: #e5e6ee; }
+      .table-fixed tbody tr.row-item:hover td:first-child {
+        background-color: #fff; }
+    .table-fixed tbody tr.odd td {
+      background-color: #f8f8f8; }
+    .table-fixed tbody td {
+      height: 100px;
+      border-left: 1px solid #ddd;
+      float: left;
+      border-bottom-width: 0; }
+    .table-fixed tbody:before {
+      top: 88px;
+      bottom: 91px;
+      position: absolute;
+      content: "";
+      width: 1px;
+      background-color: #e0e0e0;
+      margin-left: 32px; }
+  .table-fixed thead {
+    width: 99%;
+    display: block; }
+    .table-fixed thead tr th {
+      font-size: 14px; }
+    .table-fixed thead > tr > th {
+      float: left;
+      border-bottom-width: 0; }
+  .table-fixed tr {
+    display: block; }
+  .table-fixed th {
+    display: block; }
+
+.row-item .show-move {
+  display: none; }
+
+.row-item:hover .show-move {
+  display: inline-block; }
+
+.col-set-0 {
+  width: 5%; }
+
+.col-set-02 {
+  width: 8%; }
+
+.col-set-07 {
+  width: 10%; }
+
+.col-set-1 {
+  width: 13%; }
+
+.col-set-2 {
+  width: 15%; }
+
+.col-set-4 {
+  width: 23%; }
+
+.opacity-set {
+  opacity: .5; }
+
+.id-number {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ddd;
+  display: block;
+  line-height: 25px;
+  text-align: center;
+  margin-left: 12px;
+  position: relative;
+  z-index: 2;
+  background-color: #fff; }
+
+.btn-move {
+  width: 8px;
+  display: block;
+  float: left;
+  margin-top: 3px; }
+  .btn-move > i {
+    font-size: 20px; }
+
+.item-name {
+  font-weight: bold; }
+
+.show-move > i {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 5px; }
